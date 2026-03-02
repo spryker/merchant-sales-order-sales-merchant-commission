@@ -25,10 +25,6 @@ class MerchantOrderWriter implements MerchantOrderWriterInterface
      */
     protected MerchantOrderReaderInterface $merchantOrderReader;
 
-    /**
-     * @param \Spryker\Zed\MerchantSalesOrderSalesMerchantCommission\Dependency\Facade\MerchantSalesOrderSalesMerchantCommissionToMerchantSalesOrderFacadeInterface $merchantSalesOrderFacade
-     * @param \Spryker\Zed\MerchantSalesOrderSalesMerchantCommission\Business\Reader\MerchantOrderReaderInterface $merchantOrderReader
-     */
     public function __construct(
         MerchantSalesOrderSalesMerchantCommissionToMerchantSalesOrderFacadeInterface $merchantSalesOrderFacade,
         MerchantOrderReaderInterface $merchantOrderReader
@@ -37,11 +33,6 @@ class MerchantOrderWriter implements MerchantOrderWriterInterface
         $this->merchantOrderReader = $merchantOrderReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderTransfer $merchantOrderTransfer
-     *
-     * @return void
-     */
     public function saveMerchantCommissionToMerchantOrderTotals(MerchantOrderTransfer $merchantOrderTransfer): void
     {
         $persistedMerchantOrderTransfer = $this->merchantOrderReader->findMerchantOrderByIdMerchantOrder(
@@ -76,12 +67,6 @@ class MerchantOrderWriter implements MerchantOrderWriterInterface
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderTransfer $merchantOrderTransfer
-     * @param \Generated\Shared\Transfer\TotalsTransfer $totalsTransfer
-     *
-     * @return void
-     */
     protected function updateMerchantOrderTotals(
         MerchantOrderTransfer $merchantOrderTransfer,
         TotalsTransfer $totalsTransfer

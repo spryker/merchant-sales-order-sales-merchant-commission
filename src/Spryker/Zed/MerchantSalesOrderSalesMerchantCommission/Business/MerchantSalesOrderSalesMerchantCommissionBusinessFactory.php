@@ -20,9 +20,6 @@ use Spryker\Zed\MerchantSalesOrderSalesMerchantCommission\MerchantSalesOrderSale
  */
 class MerchantSalesOrderSalesMerchantCommissionBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderSalesMerchantCommission\Business\Writer\MerchantOrderWriterInterface
-     */
     public function createMerchantOrderWriter(): MerchantOrderWriterInterface
     {
         return new MerchantOrderWriter(
@@ -31,9 +28,6 @@ class MerchantSalesOrderSalesMerchantCommissionBusinessFactory extends AbstractB
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderSalesMerchantCommission\Business\Reader\MerchantOrderReaderInterface
-     */
     public function createMerchantOrderReader(): MerchantOrderReaderInterface
     {
         return new MerchantOrderReader(
@@ -41,9 +35,6 @@ class MerchantSalesOrderSalesMerchantCommissionBusinessFactory extends AbstractB
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantSalesOrderSalesMerchantCommission\Dependency\Facade\MerchantSalesOrderSalesMerchantCommissionToMerchantSalesOrderFacadeInterface
-     */
     public function getMerchantSalesOrderFacade(): MerchantSalesOrderSalesMerchantCommissionToMerchantSalesOrderFacadeInterface
     {
         return $this->getProvidedDependency(MerchantSalesOrderSalesMerchantCommissionDependencyProvider::FACADE_MERCHANT_SALES_ORDER);

@@ -55,9 +55,6 @@ class UpdateMerchantCommissionToMerchantOrderTotalsTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testShouldSkipOrderItemsWithoutMerchantReference(): void
     {
         // Arrange
@@ -88,9 +85,6 @@ class UpdateMerchantCommissionToMerchantOrderTotalsTest extends Unit
         $this->assertSame(200, $merchantSalesOrderTotalsEntity->getMerchantCommissionRefundedTotal());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateMerchantOrderTotals(): void
     {
         // Arrange
@@ -115,9 +109,6 @@ class UpdateMerchantCommissionToMerchantOrderTotalsTest extends Unit
         $this->assertSame(200, $merchantSalesOrderTotalsEntity->getMerchantCommissionRefundedTotal());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldKeepOtherMerchantOrderTotalsSame(): void
     {
         // Arrange

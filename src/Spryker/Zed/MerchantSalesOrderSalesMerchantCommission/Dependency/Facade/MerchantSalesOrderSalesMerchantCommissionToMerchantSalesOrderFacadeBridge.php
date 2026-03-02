@@ -26,21 +26,11 @@ class MerchantSalesOrderSalesMerchantCommissionToMerchantSalesOrderFacadeBridge 
         $this->merchantSalesOrderFacade = $merchantSalesOrderFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function updateMerchantOrderTotals(OrderTransfer $orderTransfer): OrderTransfer
     {
         return $this->merchantSalesOrderFacade->updateMerchantOrderTotals($orderTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderCriteriaTransfer $merchantOrderCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderCollectionTransfer
-     */
     public function getMerchantOrderCollection(
         MerchantOrderCriteriaTransfer $merchantOrderCriteriaTransfer
     ): MerchantOrderCollectionTransfer {

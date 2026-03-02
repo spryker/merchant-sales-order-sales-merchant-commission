@@ -19,21 +19,12 @@ class MerchantOrderReader implements MerchantOrderReaderInterface
      */
     protected MerchantSalesOrderSalesMerchantCommissionToMerchantSalesOrderFacadeInterface $merchantSalesOrderFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantSalesOrderSalesMerchantCommission\Dependency\Facade\MerchantSalesOrderSalesMerchantCommissionToMerchantSalesOrderFacadeInterface $merchantSalesOrderFacade
-     */
     public function __construct(
         MerchantSalesOrderSalesMerchantCommissionToMerchantSalesOrderFacadeInterface $merchantSalesOrderFacade
     ) {
         $this->merchantSalesOrderFacade = $merchantSalesOrderFacade;
     }
 
-    /**
-     * @param int $idSalesOrder
-     * @param string $merchantReference
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderTransfer|null
-     */
     public function findMerchantOrderByIdSalesOrderAndMerchantReference(int $idSalesOrder, string $merchantReference): ?MerchantOrderTransfer
     {
         $merchantOrderCriteriaTransfer = (new MerchantOrderCriteriaTransfer())
@@ -45,11 +36,6 @@ class MerchantOrderReader implements MerchantOrderReaderInterface
         return $this->findMerchantOrder($merchantOrderCriteriaTransfer);
     }
 
-    /**
-     * @param int $idMerchantOrder
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderTransfer|null
-     */
     public function findMerchantOrderByIdMerchantOrder(int $idMerchantOrder): ?MerchantOrderTransfer
     {
         $merchantOrderCriteriaTransfer = (new MerchantOrderCriteriaTransfer())
@@ -60,11 +46,6 @@ class MerchantOrderReader implements MerchantOrderReaderInterface
         return $this->findMerchantOrder($merchantOrderCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderCriteriaTransfer $merchantOrderCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderTransfer|null
-     */
     protected function findMerchantOrder(MerchantOrderCriteriaTransfer $merchantOrderCriteriaTransfer): ?MerchantOrderTransfer
     {
         $merchantOrderTransfer = $this->merchantSalesOrderFacade
@@ -80,11 +61,6 @@ class MerchantOrderReader implements MerchantOrderReaderInterface
         return $this->sanitizeDuplicatedMerchantOrderItems($merchantOrderTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderTransfer $merchantOrderTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderTransfer
-     */
     protected function sanitizeDuplicatedMerchantOrderItems(MerchantOrderTransfer $merchantOrderTransfer): MerchantOrderTransfer
     {
         $uniqueMerchantOrderItems = [];

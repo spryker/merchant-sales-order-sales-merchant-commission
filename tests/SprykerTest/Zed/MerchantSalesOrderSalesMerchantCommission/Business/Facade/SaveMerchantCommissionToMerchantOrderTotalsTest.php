@@ -32,9 +32,6 @@ class SaveMerchantCommissionToMerchantOrderTotalsTest extends Unit
      */
     protected MerchantSalesOrderSalesMerchantCommissionBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenIdOrderIsNotSet(): void
     {
         // Arrange
@@ -51,9 +48,6 @@ class SaveMerchantCommissionToMerchantOrderTotalsTest extends Unit
         $this->tester->getFacade()->saveMerchantCommissionToMerchantOrderTotals($merchantOrderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenMerchantReferenceIsNotSet(): void
     {
         // Arrange
@@ -70,9 +64,6 @@ class SaveMerchantCommissionToMerchantOrderTotalsTest extends Unit
         $this->tester->getFacade()->saveMerchantCommissionToMerchantOrderTotals($merchantOrderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenSalesOrderItemIsNotSet(): void
     {
         // Arrange
@@ -89,9 +80,6 @@ class SaveMerchantCommissionToMerchantOrderTotalsTest extends Unit
         $this->tester->getFacade()->saveMerchantCommissionToMerchantOrderTotals($merchantOrderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldThrowNullValueExceptionWhenIdMerchantOrderIsNotSet(): void
     {
         // Arrange
@@ -109,9 +97,6 @@ class SaveMerchantCommissionToMerchantOrderTotalsTest extends Unit
         $this->tester->getFacade()->saveMerchantCommissionToMerchantOrderTotals($merchantOrderTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldUpdateMerchantOrderTotals(): void
     {
         // Arrange
@@ -129,9 +114,6 @@ class SaveMerchantCommissionToMerchantOrderTotalsTest extends Unit
         $this->assertSame(200, $merchantSalesOrderTotalsEntity->getMerchantCommissionRefundedTotal());
     }
 
-    /**
-     * @return void
-     */
     public function testShouldKeepOtherMerchantOrderTotalsSame(): void
     {
         // Arrange

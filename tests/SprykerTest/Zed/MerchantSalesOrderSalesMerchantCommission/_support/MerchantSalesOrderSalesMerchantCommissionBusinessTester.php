@@ -57,9 +57,6 @@ class MerchantSalesOrderSalesMerchantCommissionBusinessTester extends Actor
      */
     protected const FAKE_MERCHANT_COMMISSION_AMOUNT_FULL_AGGREGATION = 200;
 
-    /**
-     * @return \Generated\Shared\Transfer\MerchantOrderTransfer
-     */
     public function createMerchantOrderWithTwoItems(): MerchantOrderTransfer
     {
         $merchantTransfer = $this->haveMerchant();
@@ -107,12 +104,6 @@ class MerchantSalesOrderSalesMerchantCommissionBusinessTester extends Actor
         return $merchantOrderTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantTransfer $merchantTransfer
-     * @param string $stateMachine
-     *
-     * @return \Generated\Shared\Transfer\SaveOrderTransfer
-     */
     public function createOrderWithTwoItems(MerchantTransfer $merchantTransfer, string $stateMachine): SaveOrderTransfer
     {
         $this->configureTestStateMachine([$stateMachine]);
@@ -143,11 +134,6 @@ class MerchantSalesOrderSalesMerchantCommissionBusinessTester extends Actor
         return $this->haveOrderFromQuote($quoteTransfer, $stateMachine);
     }
 
-    /**
-     * @param int $idMerchantSalesOrder
-     *
-     * @return \Orm\Zed\MerchantSalesOrder\Persistence\SpyMerchantSalesOrderTotals
-     */
     public function getMerchantSalesOrderTotalByIdMerchantSalesOrder(int $idMerchantSalesOrder): SpyMerchantSalesOrderTotals
     {
         return $this
@@ -157,9 +143,6 @@ class MerchantSalesOrderSalesMerchantCommissionBusinessTester extends Actor
             ->getLast();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantSalesOrder\Persistence\SpyMerchantSalesOrderTotalsQuery
-     */
     protected function getMerchantSalesOrderTotalsQuery(): SpyMerchantSalesOrderTotalsQuery
     {
         return SpyMerchantSalesOrderTotalsQuery::create();

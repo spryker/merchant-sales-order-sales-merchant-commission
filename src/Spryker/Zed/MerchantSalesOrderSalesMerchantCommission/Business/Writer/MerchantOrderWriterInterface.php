@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\OrderTransfer;
 
 interface MerchantOrderWriterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderTransfer $merchantOrderTransfer
-     *
-     * @return void
-     */
     public function saveMerchantCommissionToMerchantOrderTotals(MerchantOrderTransfer $merchantOrderTransfer): void;
 
     /**

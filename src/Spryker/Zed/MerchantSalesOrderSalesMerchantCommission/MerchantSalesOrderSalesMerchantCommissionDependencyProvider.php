@@ -21,11 +21,6 @@ class MerchantSalesOrderSalesMerchantCommissionDependencyProvider extends Abstra
      */
     public const FACADE_MERCHANT_SALES_ORDER = 'FACADE_MERCHANT_SALES_ORDER';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -34,11 +29,6 @@ class MerchantSalesOrderSalesMerchantCommissionDependencyProvider extends Abstra
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantSalesOrderFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_SALES_ORDER, function (Container $container) {

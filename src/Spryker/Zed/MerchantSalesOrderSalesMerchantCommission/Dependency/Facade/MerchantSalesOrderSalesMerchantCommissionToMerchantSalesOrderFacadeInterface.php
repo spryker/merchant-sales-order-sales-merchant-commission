@@ -13,18 +13,8 @@ use Generated\Shared\Transfer\OrderTransfer;
 
 interface MerchantSalesOrderSalesMerchantCommissionToMerchantSalesOrderFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OrderTransfer $orderTransfer
-     *
-     * @return \Generated\Shared\Transfer\OrderTransfer
-     */
     public function updateMerchantOrderTotals(OrderTransfer $orderTransfer): OrderTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantOrderCriteriaTransfer $merchantOrderCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantOrderCollectionTransfer
-     */
     public function getMerchantOrderCollection(
         MerchantOrderCriteriaTransfer $merchantOrderCriteriaTransfer
     ): MerchantOrderCollectionTransfer;
